@@ -24,7 +24,7 @@ namespace Grparbete
             public SHL()
             {
                 SHL team = new SHL();
-                team = new SHL("Färjestad", 70);
+                team = new SHL("Färjestad", 70); 
                 team = new SHL("Frölunda", 65);
                 Console.WriteLine(team);
 
