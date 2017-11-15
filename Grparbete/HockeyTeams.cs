@@ -7,30 +7,84 @@ using System.Threading.Tasks;
 namespace Grparbete
 {
 
-    class HockeyTeams : ITeam
+    class HockeyTeams 
     {
-        public string Name { get; set; }
-        public int Skill { get; set; }
+        
 
-        class SHL : HockeyTeams
+        public static void SHLteams()
         {
-            public SHL(string name, int skill)
+            Random r = new Random();
+            
+
+            var listOfTeams = new List<object>();
+
+            listOfTeams.Add(new Lag("Djurgården", 70));
+            listOfTeams.Add(new Lag("Färjestad", 85));
+            listOfTeams.Add(new Lag("Örebro", 65));
+            listOfTeams.Add(new Lag("Södertälje", 30));
+            listOfTeams.Add(new Lag("Skellefteå", 75));
+            listOfTeams.Add(new Lag("Växjö", 95));
+            listOfTeams.Add(new Lag("Brynäs", 50));
+            listOfTeams.Add(new Lag("HV71", 62));
+
+
+           
+
+
+            foreach (var i in listOfTeams)
             {
-                this.Name = name;
-                this.Skill = skill;
-
+                Console.WriteLine(i);
                 
-            }
-            public SHL()
-            {
-                SHL team = new SHL();
-                team = new SHL("Färjestad", 70); 
-                team = new SHL("Frölunda", 65);
-                Console.WriteLine(team);
-
-                
-
             }
         }
     }
+    class Lag : HockeyTeams
+    {
+        public Lag()
+        {
+
+        }
+        public Lag(string name, int skill)
+        {
+            Name = name;
+            Skill = skill;
+        }
+        private string name;
+        private int skill;
+        public string Name { get => name; set => name = value; }
+        public int Skill { get => skill; set => skill = value; }
+
+        public override string ToString()
+        {
+            return Name + ": " + Skill;
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
